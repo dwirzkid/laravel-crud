@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DogController;
-
+use App\Http\Controllers\StaffController;
 use App\Models\Staff;
 
 Route::get('/', function () { 
@@ -17,12 +17,12 @@ Route::get('/dashboard', function () {
 
 Route::post(
     '/staff',
-    [DogController::class, 'create']
+    [StaffController::class, 'create']
 )->name('staff.create');
 
 Route::delete(
     '/staff/{id}',
-    [DogController::class, 'delete']
+    [StaffController::class, 'delete']
 )->name('staff.delete');
 
 Route::middleware('auth')->group(function () {
